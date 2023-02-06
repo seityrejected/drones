@@ -1,0 +1,40 @@
+<configs>
+	<append xpath="/recipes">
+  
+    
+	
+	 <recipe name="ScoutDrone" count="1" craft_area="workbench" >
+      <ingredient name="motionsensor" count="1"/>
+      <ingredient name="resourceForgedSteel" count="60"/>
+      <ingredient name="resourceCloth" count="30"/>
+      <ingredient name="resourceMechanicalParts" count="25"/>
+      <ingredient name="resourceScrapPolymers" count="15"/>
+    </recipe> 
+
+ <recipe name="MedicalDrone" count="1" craft_area="workbench" >
+      <ingredient name="motionsensor" count="1"/>
+      <ingredient name="resourceForgedSteel" count="60"/>
+      <ingredient name="resourceCloth" count="30"/>
+      <ingredient name="resourceMechanicalParts" count="25"/>
+      <ingredient name="resourceScrapPolymers" count="15"/>
+    </recipe>	
+	
+	<recipe name="BattleDrone" count="1" craft_area="workbench" >
+      <ingredient name="motionsensor" count="1"/>
+      <ingredient name="resourceForgedSteel" count="60"/>
+      <ingredient name="resourceCloth" count="30"/>
+      <ingredient name="resourceMechanicalParts" count="25"/>
+      <ingredient name="resourceScrapPolymers" count="15"/>
+    </recipe>  
+	
+		<recipe name="PoliceDrone" count="1" craft_area="workbench" >
+      <ingredient name="motionsensor" count="1"/>
+      <ingredient name="resourceForgedSteel" count="60"/>
+      <ingredient name="resourceCloth" count="30"/>
+      <ingredient name="resourceMechanicalParts" count="25"/>
+      <ingredient name="resourceScrapPolymers" count="15"/>
+    </recipe>  
+	
+	
+  </append>
+</configs>

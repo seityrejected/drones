@@ -1,0 +1,143 @@
+<configs>
+	<append xpath="/entity_classes" >
+
+		<entity_class name="DroneTemplateHostile">
+			<property name="HideInSpawnMenu" value="true"/>
+			<property name="Tags" value="entity,drone,template"/>
+			<property name="Faction" value="none"/>
+			<property name="ModelType" value="Standard"/>			
+			<property name="Prefab" value="NPC"/>
+			<property name="Class" value="EntityEnemyAnimal"/>
+			<property name="Parent" value="Animals"/>
+			<property name="AvatarController" value="AvatarAnimalController"/> 
+		
+			<property name="MapIcon" value="ui_game_symbol_map_player_arrow"/>
+			<property name="NavObject" value="NOJunkDrone" />
+			<property name="TrackerIcon" value="ui_game_symbol_assemble"/>
+			
+			<property name="CompassIcon" value="ui_game_symbol_enemy_dot" />
+			<property name="CompassUpIcon" value="ui_game_symbol_enemy_dot_up" />
+			<property name="CompassDownIcon" value="ui_game_symbol_enemy_dot_down" />
+					
+			<property name="RotateToGround" value="false"/>
+			<property name="HasRagdoll" value="true"/> 
+			<property name="HasDeathAnim" value="true"/>
+			<property name="RootMotion" value="false"/>
+			<property name="RagdollOnDeathChance" value="0"/>
+			<property name="Mass" value="120"/>			
+			<property name="ExperienceGain" value="230"/>
+		
+			<property name="AttackTimeoutDay" value="1.5"/>
+			<property name="AttackTimeoutNight" value="1.4"/>
+			<property name="Weight" value="300"/>
+			<property name="IsEntityAnimal" value="true"/>
+			<property name="IsEnemyEntity" value="true"/> 
+			
+			<property name="AIGroupCircle" value="1"/>
+			<property name="AINoiseSeekDist" value="3"/>
+			<property name="AIPathCostScale" value="100, 100"/>
+		
+			<property name="AITask-1" value="BreakBlock"/>
+			<property name="AITask-2" value="ApproachAndAttackTarget" data="class=EntityZombie,0"/>
+			<property name="AITask-3" value="ApproachSpot"/>
+			<property name="AITask-4" value="Look"/>
+			<property name="AITask-5" value="Territorial"/>
+			<property name="AITask-6" value="Wander"/>
+			<property name="AITask-7" value=""/>
+			<property name="AITarget-1" value="SetAsTargetIfHurt"/>
+			<property name="AITarget-2" value="BlockingTargetTask"/>
+			<property name="AITarget-3" value="SetNearestEntityAsTarget" data="class=EntityZombie,0,0,EntityEnemyAnimal,0,0"/>
+			<property name="AITarget-4" value=""/>
+			
+			<property name="MaxViewAngle" value="180"/>
+			<property name="SightRange" value="35"/>
+			<property name="SightLightThreshold" value="-2,150"/>
+			<property name="SleeperWakeupSightDetectionMin" value="-40,5"/>
+			<property name="SleeperWakeupSightDetectionMax" value="340,480"/> 
+			<property name="SleeperSenseSightDetectionMin" value="-10,0"/>
+			<property name="SleeperSenseSightDetectionMax" value="200,300"/>
+			<property name="SleeperNoiseSenseThreshold" value="3,8"/> 
+			<property name="SleeperNoiseWakeThreshold" value="9,12"/>
+			<property name="SleeperSmellSenseThreshold" value="20,50"/> 
+			<property name="SoundSleeperSenseChance" value=".5"/> 
+			
+			<property name="SurfaceCategory" value="metal"/>
+			
+				<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
+				<drop event="Harvest" name="resourceMechanicalParts" tag="salvageHarvest" count="10"/> 
+				<drop event="Harvest" name="resourceScrapIron" tag="salvageHarvest" count="9"/>
+				<drop event="Harvest" name="resourceElectricParts" tag="salvageHarvest" count="12"/> 
+				<drop event="Harvest" name="resourceScrapPolymers" tag="salvageHarvest" count="9"/>
+				<drop event="Harvest" name="resourceMetalPipe" count="1" tag="salvageHarvest"/>
+				<drop event="Harvest" name="carBattery" count="1" prob="0.25" tag="salvageHarvest"/>
+				<drop event="Harvest" name="resourceSpring" count="2,4" tag="salvageHarvest"/>
+				<drop event="Harvest" name="resourceScrapIron" count="3,7" tag="allHarvest"/>
+				<drop event="Destroy" name="resourceScrapIron" count="1,15"/>
+				<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
+				
+			<property name="Immunity" value="sickness;disease;wellness"/>
+			<property name="MaxTurnSpeed" value="280"/>
+			<property name="MoveSpeed" value=".3"/>
+			<property name="MoveSpeedAggro" value="1.2, 1.2"/> 
+			<property name="MoveSpeedPanic" value="1.2"/>
+			
+			<property name="DeadBodyHitPoints" value="300"/>
+			<property name="TimeStayAfterDeath" value="300"/>
+			<property name="LootListAlive" value="139"/>  
+			<property name="CanClimbLadders" value="true"/>
+			<property name="ExperienceGain" value="500"/> 
+			
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="100"/>
+				<passive_effect name="StaminaMax" operation="base_set" value="100"/>
+				<passive_effect name="WaterMax" operation="base_set" value="100"/>
+			
+				<passive_effect name="PhysicalDamageResist" operation="base_set" value="50" />
+				<passive_effect name="BuffResistance" operation="base_add" value="2" tags="buffInjuryBleeding,buffInjuryBleedingZombie,buffInfectionCatch"/>
+				<passive_effect name="BuffResistance" operation="base_add" value="2" tags="buffLegSprained,buffLegBroken,buffArmSprained,buffPlayerFallingDamage"/>
+			</effect_group>
+			
+			<property name="NPCID" value="NPCjunkDrone"/>			
+		</entity_class>
+
+	
+		<entity_class name="ScoutDrone" extends="DroneTemplateHostile">
+			<property name="Mesh" value="#Other/Items?Weapons/Ranged/Junk Drone/junkDroneHeld_Prefab.prefab" />			
+			<property name="HandItem" value="handScoutDrone"/>			
+		</entity_class>
+		
+		<entity_class name="PoliceDrone" extends="DroneTemplateHostile" >
+			<property name="Mesh" value="#Other/Items?Weapons/Ranged/Junk Drone/junkDroneHeld_Prefab.prefab" />
+			<property name="SizeScale" value=".8"/>
+			<property name="HandItem" value="handPoliceDrone"/>
+		</entity_class>
+		
+		<entity_class name="BattleDrone" extends="DroneTemplateHostile" >
+			<property name="Mesh" value="#Other/Items?Weapons/Ranged/Junk Drone/junkDroneHeld_Prefab.prefab" />
+			<property name="HandItem" value="handBattleDrone"/>		
+		</entity_class>	
+		
+		<entity_class name="MedicalDrone" extends="DroneTemplateHostile" >
+			<property name="Mesh" value="#Other/Items?Weapons/Ranged/Junk Drone/junkDroneHeld_Prefab.prefab" />
+			<property name="SizeScale" value=".8"/>
+			<property name="HandItem" value="handMedicalDrone"/>
+			
+			<property name="AITask-1" value="ApproachAndAttackTarget" data="class=EntityPlayer,0"/> 		
+			<property name="AITask-2" value="SetNearestEntityAsTarget" data="class=EntityPlayer,0,0"/> 
+			<property name="AITask-3" value="ApproachSpot"/> 
+			<property name="AITask-4" value="RunawayWhenHurt" data="runChance=.9;healthPer=.5;healthPerMax=0.75"/>
+			<property name="AITask-5" value="ApproachAndAttackTarget" data="class=EntityPlayer,0"/>      
+			<property name="AITask-6" value="Territorial"/>
+			<property name="AITask-7" value="Look"/>			
+			<property name="AITask-8" value="Wander"/>
+			<property name="AITask-9" value="ApproachAndAttackTarget" data="class=EntityPlayer,0"/>      
+			<property name="AITask-10" value="BreakBlock"/> 
+			<property name="AITask-11" value="Leap"/> 
+			<property name="AITask-12" value=""/>	
+			<property name="AITarget-1" value="SetNearestEntityAsTarget" data="class=EntityPlayer,0,0"/> 
+			<property name="AITarget-2" value="BlockingTargetTask"/> 
+			<property name="AITarget-3" value="SetAsTargetIfHurt" data="class=EntityPlayer"/> 
+			<property name="AITarget-4" value=""/>  		
+		</entity_class>			
+	</append>
+</configs>

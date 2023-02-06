@@ -1,0 +1,41 @@
+<configs>
+	<append xpath="/buffs">
+
+		<buff name="buffRingOfElectricalEffect" name_key="buffShockedName" description_key="buffShockedDesc" tooltip_key="buffShockedTooltip"
+		icon="ui_game_symbol_Electrical" icon_color="255,0,0" icon_blink="true">
+		<damage_type value="Electrical"/>
+		<stack_type value="replace"/>
+		<duration value="4.5"/>
+		<update_rate value="1.2"/>
+		<effect_group>
+			<passive_effect name="HealthChangeOT" operation="base_subtract" duration="0,4.5" value="0,500"/>
+			
+			<passive_effect name="RunSpeed" operation="perc_subtract" value="0.9,0" duration="0,3.2"/>
+			<passive_effect name="WalkSpeed" operation="perc_subtract" value="0.9,0" duration="0,3.2"/>
+			<passive_effect name="CrouchSpeed" operation="perc_subtract" value="0.9,0" duration="0,3.2"/>
+			<passive_effect name="JumpStrength" operation="perc_subtract" value="0.9,0" duration="0,3.2"/>
+
+			<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="p_electric_shock"/>
+			<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="p_electric_shock"/>
+			<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="p_electric_shock"/>
+		</effect_group>
+	</buff>
+	
+	
+	<buff name="buffRegen" name_key="buffRegenName" description_key="buffRegenDesc" tooltip_key="buffRegen03Tooltip" icon="ui_game_symbol_radiation" icon_color="255,0,0" icon_blink="true">
+		<stack_type value="ignore"/>
+		<duration value="5000"/>
+		<update_rate value="1"/>
+		<effect_group>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" target="other"  cvar="maxHealthAmount" operation="set" value="10"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" target="other" stat="Water" operation="set" value="10"/>
+			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyStats" target="other" stat="Stamina" operation="set" value="10"/>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" target="other" cvar=".LegHurtCounter" operation="set" value="0"/>
+			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" target="other" cvar=".LegHurtDuration" operation="set" value="0"/>
+		
+		</effect_group>
+	</buff>
+	
+</append>
+</configs>
+

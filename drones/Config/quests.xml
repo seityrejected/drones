@@ -1,0 +1,94 @@
+<configs>
+<append xpath="/quests">
+
+	<quest_list id="Drone_quests">
+		<quest id="quest_BattleDrone"/>
+		<quest id="quest_ScoutDrone"/>
+		<quest id="quest_MedicalDrone"/>
+		<quest id="quest_PoliceDrone"/>
+	</quest_list>
+	
+	
+	
+	<quest id="quest_BattleDrone" group_name_key="Drone_quests">
+		<property name="name_key" value="Drone - Battle" />
+		<property name="description_key" value="quest_BattleDroneDesc" />
+		<property name="icon" value="ui_game_symbol_perk"/>
+		<property name="repeatable" value="true" />
+		<property name="category_key" value="quest" />
+		<property name="offer_key" value="Dear Friend,\nLets build a battle drone!" />
+		<property name="difficulty" value="veryeasy" />
+		<property name="shareable" value="true"/>		
+		
+		<objective type="Craft">
+			<property name="phase" value="1"/>
+			<property name="item" value="BattleDrone"/>
+			<property name="count" value="8"/>
+		</objective>
+		<reward type="SkillPoints" value="2" />
+		<reward type="SkillPoints" value="1" optional="true" />
+		<reward type="Exp" value="50"/>
+	</quest>	
+	
+	<quest id="quest_ScoutDrone" group_name_key="Drone_quests">
+		<property name="name_key" value="Drone - Intro" />
+		<property name="description_key" value="quest_ScoutDroneDesc" />
+		<property name="icon" value="ui_game_symbol_perk"/>
+		<property name="repeatable" value="true" />
+		<property name="category_key" value="quest" />
+		<property name="offer_key" value="Dear Friend,\nLets build a scout drone!" />
+		<property name="difficulty" value="veryeasy" />
+		<property name="shareable" value="true"/>		
+		
+		<objective type="Craft">
+			<property name="phase" value="1"/>
+			<property name="item" value="ScoutDrone"/>
+			<property name="count" value="8"/>
+		</objective>
+		<reward type="SkillPoints" value="2" />
+		<reward type="SkillPoints" value="1" optional="true" />
+		<reward type="Exp" value="50"/>
+	</quest>
+	
+	<quest id="quest_MedicalDrone" group_name_key="Drone_quests">
+		<property name="name_key" value="Drone - Intro" />
+		<property name="description_key" value="quest_MedicalDroneDesc" />
+		<property name="icon" value="ui_game_symbol_perk"/>
+		<property name="repeatable" value="true" />
+		<property name="category_key" value="quest" />
+		<property name="offer_key" value="Dear Friend,\nLets build a medical drone!" />
+		<property name="difficulty" value="veryeasy" />
+		<property name="shareable" value="true"/>		
+		
+		<objective type="Craft">
+			<property name="phase" value="1"/>
+			<property name="item" value="MedicalDrone"/>
+			<property name="count" value="8"/>
+		</objective>
+		<reward type="SkillPoints" value="2" />
+		<reward type="SkillPoints" value="1" optional="true" />
+		<reward type="Exp" value="50"/>
+	</quest>
+	
+	<quest id="quest_PoliceDrone" group_name_key="Drone_quests">
+		<property name="name_key" value="Drone - Intro" />
+		<property name="description_key" value="quest_PoliceDroneDesc" />
+		<property name="icon" value="ui_game_symbol_perk"/>
+		<property name="repeatable" value="true" />
+		<property name="category_key" value="quest" />
+		<property name="offer_key" value="Dear Friend,\nLets build a police drone!" />
+		<property name="difficulty" value="veryeasy" />
+		<property name="shareable" value="true"/>		
+		
+		<objective type="Craft">
+			<property name="phase" value="1"/>
+			<property name="item" value="PoliceDrone"/>
+			<property name="count" value="8"/>
+		</objective>
+		<reward type="SkillPoints" value="2" />
+		<reward type="SkillPoints" value="1" optional="true" />
+		<reward type="Exp" value="50"/>
+	</quest>
+
+</append>
+</configs>

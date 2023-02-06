@@ -1,0 +1,10 @@
+<configs>
+
+    <insertAfter xpath="/lootcontainers/lootgroup[@name='schematicsModsRare']/item[@name='drugHerbalAntibioticsSchematic']" >
+        <item name="ScoutDroneSchematic" count="1" prob="1"/>
+		<item name="MedicalDroneSchematic" count="1" prob="1"/>
+		<item name="BattleDroneSchematic" count="1" prob="1"/>
+		<item name="PoliceDroneSchematic" count="1" prob="1"/>
+    </insertAfter>
+    
+</configs>
