@@ -1,290 +1,282 @@
 <configs>
 	<append xpath="/items">
-	<!-- HandItems-->
-	
+		<!-- HandItems-->
+
 		<item name="HandDroneTemplate">
-			<property name="Extends" value="meleeHandMaster"/>
-			<property name="CreativeMode" value="None"/>
-			<property name="HoldType" value="35"/>
+			<property name="Extends" value="meleeHandMaster" />
+			<property name="CreativeMode" value="None" />
+			<property name="HoldType" value="35" />
 			<property class="Action0">
-				<property name="Delay" value=".6"/>
-				<property name="Range" value="1.6"/>
-				<property name="DamageEntity" value="25"/>
-				<property name="DamageBlock" value="25"/>
+				<property name="Delay" value=".6" />
+				<property name="Range" value="1.6" />
+				<property name="DamageEntity" value="25" />
+				<property name="DamageBlock" value="25" />
 			</property>
 			<effect_group name="meleeHandMechTemplate" tiered="false">
-				<passive_effect name="ModSlots" operation="base_set" value="0"/>
-				
-				<passive_effect name="DamageModifier" operation="perc_add" value="3" tags="earth"/>
-				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true"
-					buff="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo"
-					weights=".11,.07,.07,.05,.29,.36,.11"/>
+				<passive_effect name="ModSlots" operation="base_set" value="0" />
+
+				<passive_effect name="DamageModifier" operation="perc_add" value="3" tags="earth" />
+				<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" fireOneBuff="true" buff="buffFatiguedTrigger,buffArmSprainedCHTrigger,buffLegSprainedCHTrigger,buffLaceration,buffAbrasionCatch,buffInjuryStunned01CHTrigger,buffInjuryBleedingTwo" weights=".11,.07,.07,.05,.29,.36,.11" />
 			</effect_group>
-		</item>		
-		
+		</item>
+
 		<item name="handPoliceDrone">
-					<property name="Extends" value="HandDroneTemplate"/>
-			<property name="CreativeMode" value="None"/>
+			<property name="Extends" value="HandDroneTemplate" />
+			<property name="CreativeMode" value="None" />
 			<property class="Action0">
-				<property name="Delay" value=".6"/> <!-- obsolete if rounds per minute exists -->
-				<property name="Range" value="2.5"/>
-				<property name="DamageEntity" value="65"/>
-				<property name="DamageBlock" value="45"/>
-			</property>	
-		</item>	
-		
+				<property name="Delay" value=".6" />
+				<!-- obsolete if rounds per minute exists -->
+				<property name="Range" value="2.5" />
+				<property name="DamageEntity" value="65" />
+				<property name="DamageBlock" value="45" />
+			</property>
+		</item>
+
 		<item name="handScoutDrone">
-			<property name="Extends" value="HandDroneTemplate"/>
-			<property name="CreativeMode" value="None"/>
+			<property name="Extends" value="HandDroneTemplate" />
+			<property name="CreativeMode" value="None" />
 			<property class="Action0">
-				<property name="Delay" value=".6"/> <!-- obsolete if rounds per minute exists -->
-				<property name="Range" value="2.0"/>
-				<property name="DamageEntity" value="20"/>
-				<property name="DamageBlock" value="20"/>
-			</property>	
-		</item>		
-		
+				<property name="Delay" value=".6" />
+				<!-- obsolete if rounds per minute exists -->
+				<property name="Range" value="2.0" />
+				<property name="DamageEntity" value="20" />
+				<property name="DamageBlock" value="20" />
+			</property>
+		</item>
+
 		<item name="handBattleDrone">
-			<property name="Extends" value="HandDroneTemplate"/>
-			<property name="CreativeMode" value="None"/>
+			<property name="Extends" value="HandDroneTemplate" />
+			<property name="CreativeMode" value="None" />
 			<property class="Action0">
-				<property name="Delay" value=".6"/> <!-- obsolete if rounds per minute exists -->
-				<property name="Range" value="2.5"/>
-				<property name="DamageEntity" value="65"/>
-				<property name="DamageBlock" value="45"/>
-			</property>		
-		</item>	
-		
+				<property name="Delay" value=".6" />
+				<!-- obsolete if rounds per minute exists -->
+				<property name="Range" value="2.5" />
+				<property name="DamageEntity" value="65" />
+				<property name="DamageBlock" value="45" />
+			</property>
+		</item>
+
 		<item name="handMedicalDrone">
-			<property name="Extends" value="HandDroneTemplate"/>
-			<property name="CreativeMode" value="None"/>
+			<property name="Extends" value="HandDroneTemplate" />
+			<property name="CreativeMode" value="None" />
 			<property class="Action0">
-		<property name="Class" value="Launcher"/>
-		<property name="Hitmask_override" value="Arrow"/>
-		<property name="Buff" value="buffRegen"/>
-		<property name="Delay" value=".3"/> <!-- obsolete if rounds per minute exists -->
-		<property name="Magazine_items" value="MedXpansionMedicAmmoHealMedium"/>
-		<property name="Instantiate_on_load" value="false"/>
-		<property name="Reload_time" value=".1"/>
-		<property name="Sound_start" value="nailgun_fire"/>
-		<property name="Particles_muzzle_fire" value="nailgunfire"/>
-		<property name="Particles_muzzle_smoke" value="nozzlesmoke"/>
-		<property name="Sound_repeat" value=""/>
-		<property name="Sound_end" value=""/>
-		<property name="Sound_empty" value="dryfire"/>
-		<property name="Sound_reload" value="nailgun_reload"/>
-	</property>
-	<property name="Group" value="Tools/Traps"/>
-	<property name="RepairExpMultiplier" value="10.8"/>
-	<property name="EconomicValue" value="1000"/>
-	<effect_group name="handMedicalDrone"> <!-- gunToolNailgun -->
-		<passive_effect name="DamageFalloffRange" operation="base_set" value="0"/>
-		<passive_effect name="DamageFalloffRange" operation="perc_add" value="0"/> <!-- random effective rng -->
-		<passive_effect name="MaxRange" operation="base_set" value="70"/>
+				<property name="Class" value="Launcher" />
+				<property name="Hitmask_override" value="Arrow" />
+				<property name="Buff" value="buffRegen" />
+				<property name="Delay" value=".3" />
+				<!-- obsolete if rounds per minute exists -->
+				<property name="Magazine_items" value="MedXpansionMedicAmmoHealMedium" />
+				<property name="Instantiate_on_load" value="false" />
+				<property name="Reload_time" value=".1" />
+				<property name="Sound_start" value="nailgun_fire" />
+				<property name="Particles_muzzle_fire" value="nailgunfire" />
+				<property name="Particles_muzzle_smoke" value="nozzlesmoke" />
+				<property name="Sound_repeat" value="" />
+				<property name="Sound_end" value="" />
+				<property name="Sound_empty" value="dryfire" />
+				<property name="Sound_reload" value="nailgun_reload" />
+			</property>
+			<property name="Group" value="Tools/Traps" />
+			<property name="RepairExpMultiplier" value="10.8" />
+			<property name="EconomicValue" value="1000" />
+			<effect_group name="handMedicalDrone">				<!-- gunToolNailgun -->
+				<passive_effect name="DamageFalloffRange" operation="base_set" value="0" />
+				<passive_effect name="DamageFalloffRange" operation="perc_add" value="0" />
+				<!-- random effective rng -->
+				<passive_effect name="MaxRange" operation="base_set" value="70" />
 
-		<passive_effect name="SpreadDegreesVertical" operation="base_set" value="1.3"/>
-		<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="1.3"/>
-		<passive_effect name="SpreadMultiplierAiming" operation="base_set" value=".4"/>
-		<passive_effect name="SpreadMultiplierCrouching" operation="base_set" value=".8"/>
-		<passive_effect name="SpreadMultiplierWalking" operation="base_set" value="1.5"/>
-		<passive_effect name="SpreadMultiplierRunning" operation="base_set" value="2.2"/>
-		<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="2"/>
-		<passive_effect name="WeaponHandling" operation="base_set" value=".7"/> <!-- crosshair reset speed -->
-		<passive_effect name="RoundsPerMinute" operation="base_set" value="200"/>
-		<passive_effect name="BurstRoundCount" operation="base_set" value="1"/>
-		<passive_effect name="MagazineSize" operation="base_set" value="10"/>
-		<passive_effect name="KickDegreesVerticalMin" operation="base_set" value="-.7"/>
-		<passive_effect name="KickDegreesVerticalMax" operation="base_set" value=".7"/>
-		<passive_effect name="KickDegreesHorizontalMin" operation="base_set" value="-.6"/>
-		<passive_effect name="KickDegreesHorizontalMax" operation="base_set" value=".6"/>
-		<passive_effect name="DegradationMax" operation="base_set" value="1000" tags="nailgun"/>
-		<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="nailgun"/>
-		<passive_effect name="ModSlots" operation="base_set" value="0,5" tier="1,6"/>
-	</effect_group>
-</item>		
-		
-			
-		
-		<!-- Drone Ammo-->	
-	
+				<passive_effect name="SpreadDegreesVertical" operation="base_set" value="1.3" />
+				<passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="1.3" />
+				<passive_effect name="SpreadMultiplierAiming" operation="base_set" value=".4" />
+				<passive_effect name="SpreadMultiplierCrouching" operation="base_set" value=".8" />
+				<passive_effect name="SpreadMultiplierWalking" operation="base_set" value="1.5" />
+				<passive_effect name="SpreadMultiplierRunning" operation="base_set" value="2.2" />
+				<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="2" />
+				<passive_effect name="WeaponHandling" operation="base_set" value=".7" />
+				<!-- crosshair reset speed -->
+				<passive_effect name="RoundsPerMinute" operation="base_set" value="200" />
+				<passive_effect name="BurstRoundCount" operation="base_set" value="1" />
+				<passive_effect name="MagazineSize" operation="base_set" value="10" />
+				<passive_effect name="KickDegreesVerticalMin" operation="base_set" value="-.7" />
+				<passive_effect name="KickDegreesVerticalMax" operation="base_set" value=".7" />
+				<passive_effect name="KickDegreesHorizontalMin" operation="base_set" value="-.6" />
+				<passive_effect name="KickDegreesHorizontalMax" operation="base_set" value=".6" />
+				<passive_effect name="DegradationMax" operation="base_set" value="1000" tags="nailgun" />
+				<passive_effect name="DegradationPerUse" operation="base_set" value="1" tags="nailgun" />
+				<passive_effect name="ModSlots" operation="base_set" value="0,5" tier="1,6" />
+			</effect_group>
+		</item>
 
-	<!-- Place Drones-->	
+		<!-- Drone Ammo-->
 
-	 <item name="ScoutDrone">
-      <property name="Tags" value="perkAdvancedEngineering"/>
-      <property name="DescriptionKey" value="ScoutDrone_desc"/>
-      <property name="HoldType" value="7"/>
-	   <property name="CustomIcon" value="ScoutDrone"/>
-      <property name="HoldingItemHidden" value="false"/>
-      <property name="Meshfile" value="#Other/Items?Weapons/Ranged/Junk Drone/junkDroneHeld_Prefab.prefab"/>
-	  <property name="HandMeshfile" value="#Other/Items?Weapons/Ranged/Junk Drone/junkDroneHeld_Prefab.prefab"/>
-      <property name="DropMeshfile" value="#Other/Items?Weapons/Ranged/Junk Drone/junkDroneHeld_Prefab.prefab"/>
-      <property name="Material" value="Mmetal"/>
-      <property name="Stacknumber" value="1"/>
-      <property name="EconomicValue" value="6000"/>
-      <property name="SellableToTrader" value="false"/>
-      <property name="Group" value="Science"/>
-      <property class="Action1">
-        <property name="Class" value="SpawnVehicle"/>
-        <property name="Vehicle" value="ScoutDrone"/>
-      </property>
-    </item>
-	
-	
-	 <item name="MedicalDrone">
-      <property name="Tags" value="perkAdvancedEngineering"/>
-      <property name="DescriptionKey" value="MedicalDrone_desc"/>
-      <property name="HoldType" value="7"/>
-	   <property name="CustomIcon" value="MedicalDrone"/>
-      <property name="HoldingItemHidden" value="false"/>
-      <property name="Meshfile" value="#Other/Items?Weapons/Ranged/Junk Drone/junkDroneHeld_Prefab.prefab"/>
-	  <property name="HandMeshfile" value="#Other/Items?Weapons/Ranged/Junk Drone/junkDroneHeld_Prefab.prefab"/>
-      <property name="DropMeshfile" value="#Other/Items?Weapons/Ranged/Junk Drone/junkDroneHeld_Prefab.prefab"/>
-      <property name="Material" value="Mmetal"/>
-      <property name="Stacknumber" value="1"/>
-      <property name="EconomicValue" value="6000"/>
-      <property name="SellableToTrader" value="false"/>
-      <property name="Group" value="Science"/>
-      <property class="Action1">
-        <property name="Class" value="SpawnVehicle"/>
-        <property name="Vehicle" value="MedicalDrone"/>
-      </property>
-    </item>
-	
-		 <item name="BattleDrone">
-      <property name="Tags" value="perkAdvancedEngineering"/>
-      <property name="DescriptionKey" value="BattleDrone_desc"/>
-      <property name="HoldType" value="7"/>
-	   <property name="CustomIcon" value="BattleDrone"/>
-      <property name="HoldingItemHidden" value="false"/>
-      <property name="Meshfile" value="#Other/Items?Weapons/Ranged/Junk Drone/junkDroneHeld_Prefab.prefab"/>
-	  <property name="HandMeshfile" value="#Other/Items?Weapons/Ranged/Junk Drone/junkDroneHeld_Prefab.prefab"/>
-      <property name="DropMeshfile" value="#Other/Items?Weapons/Ranged/Junk Drone/junkDroneHeld_Prefab.prefab"/>
-      <property name="Material" value="Mmetal"/>
-      <property name="Stacknumber" value="1"/>
-      <property name="EconomicValue" value="6000"/>
-      <property name="SellableToTrader" value="false"/>
-      <property name="Group" value="Science"/>
-      <property class="Action1">
-        <property name="Class" value="SpawnVehicle"/>
-        <property name="Vehicle" value="BattleDrone"/>
-      </property>
-    </item>
-	
-		 <item name="PoliceDrone">
-      <property name="Tags" value="perkAdvancedEngineering"/>
-      <property name="DescriptionKey" value="PoliceDrone_desc"/>
-      <property name="HoldType" value="7"/>
-	   <property name="CustomIcon" value="PoliceDrone"/>
-      <property name="HoldingItemHidden" value="false"/>
-      <property name="Meshfile" value="#Other/Items?Weapons/Ranged/Junk Drone/junkDroneHeld_Prefab.prefab"/>
-	  <property name="HandMeshfile" value="#Other/Items?Weapons/Ranged/Junk Drone/junkDroneHeld_Prefab.prefab"/>
-      <property name="DropMeshfile" value="#Other/Items?Weapons/Ranged/Junk Drone/junkDroneHeld_Prefab.prefab"/>
-      <property name="Material" value="Mmetal"/>
-      <property name="Stacknumber" value="1"/>
-      <property name="EconomicValue" value="6000"/>
-      <property name="SellableToTrader" value="false"/>
-      <property name="Group" value="Science"/>
-      <property class="Action1">
-        <property name="Class" value="SpawnVehicle"/>
-        <property name="Vehicle" value="PoliceDrone"/>
-      </property>
-    </item>
-	
-		
-	
-	<!-- Schematics-->
-	
-    <item name="ScoutDroneSchematic">
-      <property name="Extends" value="schematicMaster"/>
-      <property name="CreativeMode" value="Player"/>
-      <property name="CustomIcon" value="ScoutDrone"/>
-      <property name="Unlocks" value="ScoutDrone"/>
-      <effect_group tiered="false">
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="Drone" operation="set" value="1" />
-      </effect_group>
-    </item>
-	
-	  <item name="MedicalDroneSchematic">
-      <property name="Extends" value="schematicMaster"/>
-      <property name="CreativeMode" value="Player"/>
-      <property name="CustomIcon" value="MedicalDrone"/>
-      <property name="Unlocks" value="MedicalDrone"/>
-      <effect_group tiered="false">
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="Drone" operation="set" value="1" />
-      </effect_group>
-    </item>
-	
-	 <item name="BattleDroneSchematic">
-      <property name="Extends" value="schematicMaster"/>
-      <property name="CreativeMode" value="Player"/>
-      <property name="CustomIcon" value="BattleDrone"/>
-      <property name="Unlocks" value="BattleDrone"/>
-      <effect_group tiered="false">
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="Drone" operation="set" value="1" />
-      </effect_group>
-    </item>
-	
-	 <item name="PoliceDroneSchematic">
-      <property name="Extends" value="schematicMaster"/>
-      <property name="CreativeMode" value="Player"/>
-      <property name="CustomIcon" value="PoliceDrone"/>
-      <property name="Unlocks" value="PoliceDrone"/>
-      <effect_group tiered="false">
-        <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="Drone" operation="set" value="1" />
-      </effect_group>
-    </item>
-	
-	
-		
+		<!-- Place Drones-->
+
+		<item name="ScoutDrone">
+			<property name="Tags" value="perkAdvancedEngineering" />
+			<property name="DescriptionKey" value="ScoutDrone_desc" />
+			<property name="HoldType" value="7" />
+			<property name="CustomIcon" value="ScoutDrone" />
+			<property name="HoldingItemHidden" value="false" />
+			<property name="Meshfile" value="#Other/Items?Weapons/Ranged/Junk Drone/junkDroneHeld_Prefab.prefab" />
+			<property name="HandMeshfile" value="#Other/Items?Weapons/Ranged/Junk Drone/junkDroneHeld_Prefab.prefab" />
+			<property name="DropMeshfile" value="#Other/Items?Weapons/Ranged/Junk Drone/junkDroneHeld_Prefab.prefab" />
+			<property name="Material" value="Mmetal" />
+			<property name="Stacknumber" value="1" />
+			<property name="EconomicValue" value="6000" />
+			<property name="SellableToTrader" value="false" />
+			<property name="Group" value="Science" />
+			<property class="Action1">
+				<property name="Class" value="SpawnVehicle" />
+				<property name="Vehicle" value="ScoutDrone" />
+			</property>
+		</item>
+
+		<item name="MedicalDrone">
+			<property name="Tags" value="perkAdvancedEngineering" />
+			<property name="DescriptionKey" value="MedicalDrone_desc" />
+			<property name="HoldType" value="7" />
+			<property name="CustomIcon" value="MedicalDrone" />
+			<property name="HoldingItemHidden" value="false" />
+			<property name="Meshfile" value="#Other/Items?Weapons/Ranged/Junk Drone/junkDroneHeld_Prefab.prefab" />
+			<property name="HandMeshfile" value="#Other/Items?Weapons/Ranged/Junk Drone/junkDroneHeld_Prefab.prefab" />
+			<property name="DropMeshfile" value="#Other/Items?Weapons/Ranged/Junk Drone/junkDroneHeld_Prefab.prefab" />
+			<property name="Material" value="Mmetal" />
+			<property name="Stacknumber" value="1" />
+			<property name="EconomicValue" value="6000" />
+			<property name="SellableToTrader" value="false" />
+			<property name="Group" value="Science" />
+			<property class="Action1">
+				<property name="Class" value="SpawnVehicle" />
+				<property name="Vehicle" value="MedicalDrone" />
+			</property>
+		</item>
+
+		<item name="BattleDrone">
+			<property name="Tags" value="perkAdvancedEngineering" />
+			<property name="DescriptionKey" value="BattleDrone_desc" />
+			<property name="HoldType" value="7" />
+			<property name="CustomIcon" value="BattleDrone" />
+			<property name="HoldingItemHidden" value="false" />
+			<property name="Meshfile" value="#Other/Items?Weapons/Ranged/Junk Drone/junkDroneHeld_Prefab.prefab" />
+			<property name="HandMeshfile" value="#Other/Items?Weapons/Ranged/Junk Drone/junkDroneHeld_Prefab.prefab" />
+			<property name="DropMeshfile" value="#Other/Items?Weapons/Ranged/Junk Drone/junkDroneHeld_Prefab.prefab" />
+			<property name="Material" value="Mmetal" />
+			<property name="Stacknumber" value="1" />
+			<property name="EconomicValue" value="6000" />
+			<property name="SellableToTrader" value="false" />
+			<property name="Group" value="Science" />
+			<property class="Action1">
+				<property name="Class" value="SpawnVehicle" />
+				<property name="Vehicle" value="BattleDrone" />
+			</property>
+		</item>
+
+		<item name="PoliceDrone">
+			<property name="Tags" value="perkAdvancedEngineering" />
+			<property name="DescriptionKey" value="PoliceDrone_desc" />
+			<property name="HoldType" value="7" />
+			<property name="CustomIcon" value="PoliceDrone" />
+			<property name="HoldingItemHidden" value="false" />
+			<property name="Meshfile" value="#Other/Items?Weapons/Ranged/Junk Drone/junkDroneHeld_Prefab.prefab" />
+			<property name="HandMeshfile" value="#Other/Items?Weapons/Ranged/Junk Drone/junkDroneHeld_Prefab.prefab" />
+			<property name="DropMeshfile" value="#Other/Items?Weapons/Ranged/Junk Drone/junkDroneHeld_Prefab.prefab" />
+			<property name="Material" value="Mmetal" />
+			<property name="Stacknumber" value="1" />
+			<property name="EconomicValue" value="6000" />
+			<property name="SellableToTrader" value="false" />
+			<property name="Group" value="Science" />
+			<property class="Action1">
+				<property name="Class" value="SpawnVehicle" />
+				<property name="Vehicle" value="PoliceDrone" />
+			</property>
+		</item>
+
+		<!-- Schematics-->
+
+		<item name="ScoutDroneSchematic">
+			<property name="Extends" value="schematicMaster" />
+			<property name="CreativeMode" value="Player" />
+			<property name="CustomIcon" value="ScoutDrone" />
+			<property name="Unlocks" value="ScoutDrone" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="Drone" operation="set" value="1" />
+			</effect_group>
+		</item>
+
+		<item name="MedicalDroneSchematic">
+			<property name="Extends" value="schematicMaster" />
+			<property name="CreativeMode" value="Player" />
+			<property name="CustomIcon" value="MedicalDrone" />
+			<property name="Unlocks" value="MedicalDrone" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="Drone" operation="set" value="1" />
+			</effect_group>
+		</item>
+
+		<item name="BattleDroneSchematic">
+			<property name="Extends" value="schematicMaster" />
+			<property name="CreativeMode" value="Player" />
+			<property name="CustomIcon" value="BattleDrone" />
+			<property name="Unlocks" value="BattleDrone" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="Drone" operation="set" value="1" />
+			</effect_group>
+		</item>
+
+		<item name="PoliceDroneSchematic">
+			<property name="Extends" value="schematicMaster" />
+			<property name="CreativeMode" value="Player" />
+			<property name="CustomIcon" value="PoliceDrone" />
+			<property name="Unlocks" value="PoliceDrone" />
+			<effect_group tiered="false">
+				<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="Drone" operation="set" value="1" />
+			</effect_group>
+		</item>
+
 		<!-- Quests-->
-		
-			<item name="quest_ScoutDrone">
+
+		<item name="quest_ScoutDrone">
 			<property name="Extends" value="questMaster" />
-			<property name="CustomIcon" value="challengeQuestMaster"/>
-			<property name="DescriptionKey" value="quest_ScoutDroneDesc"/>
-			<property name="Stacknumber" value="1"/>
+			<property name="CustomIcon" value="challengeQuestMaster" />
+			<property name="DescriptionKey" value="quest_ScoutDroneDesc" />
+			<property name="Stacknumber" value="1" />
 			<property class="Action0">
-				<property name="Class" value="Quest"/>
-				<property name="QuestGiven" value="quest_ScoutDrone"/>
+				<property name="Class" value="Quest" />
+				<property name="QuestGiven" value="quest_ScoutDrone" />
 			</property>
 		</item>
 
-	<item name="quest_BattleDrone">
+		<item name="quest_BattleDrone">
 			<property name="Extends" value="questMaster" />
-			<property name="CustomIcon" value="challengeQuestMaster"/>
-			<property name="DescriptionKey" value="quest_BattleDronesDesc"/>
-			<property name="Stacknumber" value="1"/>
+			<property name="CustomIcon" value="challengeQuestMaster" />
+			<property name="DescriptionKey" value="quest_BattleDronesDesc" />
+			<property name="Stacknumber" value="1" />
 			<property class="Action0">
-				<property name="Class" value="Quest"/>
-				<property name="QuestGiven" value="quest_BattleDrone"/>
+				<property name="Class" value="Quest" />
+				<property name="QuestGiven" value="quest_BattleDrone" />
 			</property>
 		</item>
-		
+
 		<item name="quest_MedicalDrone">
 			<property name="Extends" value="questMaster" />
-			<property name="CustomIcon" value="challengeQuestMaster"/>
-			<property name="DescriptionKey" value="quest_MedicalDronesDesc"/>
-			<property name="Stacknumber" value="1"/>
+			<property name="CustomIcon" value="challengeQuestMaster" />
+			<property name="DescriptionKey" value="quest_MedicalDronesDesc" />
+			<property name="Stacknumber" value="1" />
 			<property class="Action0">
-				<property name="Class" value="Quest"/>
-				<property name="QuestGiven" value="quest_MedicalDrone"/>
-			</property>
-		</item>
-		
-			<item name="quest_PoliceDrone">
-			<property name="Extends" value="questMaster" />
-			<property name="CustomIcon" value="challengeQuestMaster"/>
-			<property name="DescriptionKey" value="quest_PoliceDroneDesc"/>
-			<property name="Stacknumber" value="1"/>
-			<property class="Action0">
-				<property name="Class" value="Quest"/>
-				<property name="QuestGiven" value="quest_PoliceDrone"/>
+				<property name="Class" value="Quest" />
+				<property name="QuestGiven" value="quest_MedicalDrone" />
 			</property>
 		</item>
 
-	
-		
-		
+		<item name="quest_PoliceDrone">
+			<property name="Extends" value="questMaster" />
+			<property name="CustomIcon" value="challengeQuestMaster" />
+			<property name="DescriptionKey" value="quest_PoliceDroneDesc" />
+			<property name="Stacknumber" value="1" />
+			<property class="Action0">
+				<property name="Class" value="Quest" />
+				<property name="QuestGiven" value="quest_PoliceDrone" />
+			</property>
+		</item>
 	</append>
 </configs>

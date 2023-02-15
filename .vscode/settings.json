@@ -1,0 +1,8 @@
+{
+    "[xml]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "DotJoshJohnson.xml",
+        "editor.tabSize": 2,
+    },
+    "xmlTools.enforcePrettySelfClosingTagOnFormat": true,
+}
